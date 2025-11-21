@@ -26,4 +26,4 @@ for item in enumerate(lista):
 
 # obs: quando coloco o enumarate em uma variável, ele cria um objeto de uso limitado
 # ou seja, ele consome a memória.
-# outra coisa, um enumarate dentro de yma variável, é uma tupla.
+# outra coisa, um enumarate dentro de uma variável, é uma tupla.
