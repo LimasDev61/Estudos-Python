@@ -24,6 +24,4 @@ for item in enumerate(lista):
     print(item)
 
 
-# obs: quando coloco o enumarate em uma variável, ele cria um objeto de uso limitado
-# ou seja, ele consome a memória.
-# outra coisa, um enumarate dentro de uma variável, é uma tupla.
+# Quando eu faço um desempacotamento do enumerate, ele vira uma tupla.
