@@ -1,0 +1,30 @@
+{
+    "nome_do_arquivo": "tarefas_para_o_dia_teste_1",
+    "quantidade_de_tarefas": 6,
+    "tarefas": [
+        {
+            "id": 1,
+            "tarefa": "Fazer academia"
+        },
+        {
+            "id": 2,
+            "tarefa": "Estudar 2 horas por dia"
+        },
+        {
+            "id": 3,
+            "tarefa": "Lavar as louças"
+        },
+        {
+            "id": 4,
+            "tarefa": "Tomar banho"
+        },
+        {
+            "id": 5,
+            "tarefa": "Brincar com os filhos"
+        },
+        {
+            "id": 6,
+            "tarefa": "Mandar curriculo"
+        }
+    ]
+}

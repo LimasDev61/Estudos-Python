@@ -1,0 +1,1 @@
+variavel_modulo = "Variável do módulo 3"
