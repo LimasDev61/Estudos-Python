@@ -16,4 +16,4 @@ while i < len(string):
 
     i += 1
 else:
-    print("\nFim da busca.") # -> Essa linha é executada quando a condição do while se torna falsa(ao fim da iteração)
+    print("\nFim da busca.") # -> Essa linha é executada quando a condição do while se torna falsa(ao fim da iteração).
