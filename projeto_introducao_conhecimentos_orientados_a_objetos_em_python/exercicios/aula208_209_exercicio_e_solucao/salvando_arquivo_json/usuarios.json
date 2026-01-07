@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Renan Lima",
+        "cargo": "Desenvolvedor",
+        "status": "Dados Transformados em JSON"
+    },
+    {
+        "nome": "Maria Lima",
+        "cargo": "Desenvolvedor",
+        "status": "Dados Transformados em JSON"
+    },
+    {
+        "nome": "Carlos Lima",
+        "cargo": "Desenvolvedor",
+        "status": "Dados Transformados em JSON"
+    }
+]
