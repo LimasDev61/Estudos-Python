@@ -12,4 +12,4 @@ caneta_azul = Caneta()
 
 # Associação: o escritor passa a usar a caneta
 escritor.ferramenta = caneta_azul
-escritor.ferramenta.escrever()
+escritor.ferramenta.escrever() # A caneta está escrevendo...
