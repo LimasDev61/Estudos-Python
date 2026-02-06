@@ -30,7 +30,7 @@ Diferente da *Agregação/Composição*("Tem um"), a Herança define que uma cla
 
 Vamos ver um código exemplo, hierarquia de eletrônicos.
 
-```
+```Python
 # SUPERCLASSE(Generalização)
 class Eletronico:
     def __init__(self, nome):
