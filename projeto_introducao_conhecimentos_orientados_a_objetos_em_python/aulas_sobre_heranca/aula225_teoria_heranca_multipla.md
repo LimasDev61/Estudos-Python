@@ -11,3 +11,94 @@ A herança mútipla é útil quando um objeto possui naturezas distintas que se 
 
 - <span style="color:gray">``Exemplo:``</span> Um *Smartphone* pode ser visto tanto como um *Eletronico* quanto como um *GadgetCumunicacao*.
 
+- <span style="color:gray">``Sintaxe:``</span> Basta separar as classes pai por vírgula dentro dos parênteses.
+
+```Python
+class Logavel:
+    def log(self, mensagem):
+        print(f"LOG: {mensagem}")
+
+class Conexao:
+    def conectar(self):
+        print("Conectando ao banco de dados...")
+
+# Herança Múltipla
+class BancoDeDados(Logavel, Conexao):
+    pass
+
+db = BancoDeDados()
+db.log("Iniciando sistema") # Vem de Logavel
+db.conectar()               # Vem de Conexao
+```
+
+Saída:
+```
+LOG: Iniciando sistema
+Conectando ao banco de dados...
+```
+
+---
+## 3. MRO: Method Resolution Order
+
+Para resolver esse conflito, o Python utiliza um algoritmo chamado **C3 Linearization** para criar o **MRO**. Ele define uma ordem linear e determinística de busca para os métodos.
+
+Podemos consultar esa ordem em qualquer classe usando o atributo *__mro__* ou o método **.mro()**.
+
+```Python
+class A:
+    def fala(self):
+        print("Fala de A")
+
+class B(A):
+    def fala(self):
+        print("Fala de B")
+
+class C(A):
+    def fala(self):
+        print("Fala de C")
+
+class D(B, C):
+    pass
+
+# Qual será a saída?
+objeto = D()
+objeto.fala() 
+
+print(D.mro())
+# Ordem: D -> B -> C -> A -> object
+```
+
+```O que acontece aqui?``` O Python busca primeiro em **D**. Se não char, busca em **B**(o primeiro pai listado). Se não achar em **B**, busca em **C**, e por último na base **A**. No exemplo acima, ele executará a "Fala de B".
+
+---
+## 4. Mixins: O uso inteligente da Herança Múltipla
+
+Na Engenharia de Software profissional, raramente usamos herança mútipla para criar hierarquias complexas de "seres". Em vez disso, usamos **Mixins**.
+
+Um **Mixin** é uma classe pequena que não foi feita para ser instanciada sozinha, mas sim para "adicionar" uma habilidade a outra classe.
+
+- ```Dica de Roadmap:``` Mixins são comuns em frameworks como Django e em sistemas de log e serelização.
+
+```Python
+class JsonMixin:
+    def para_json(self):
+        import json
+        return json.dumps(self.__dict__)
+
+class Produto(JsonMixin): # Adiciona a 'habilidade' de virar JSON
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+
+p = Produto("Mouse", 50)
+print(p.para_json())
+```
+
+---
+## 5. Veredito: Usar ou não usar?
+
+- ```Vantagens:``` Extrema flexibilidade e reaproveitamente de "habilidades"(Mixins).
+
+- ```Risco:``` O código pode ser tornar um "espaguete" difícil de rastrear se a hierarquia for muito profunda.
+
+A Herança mútipla não consome mais RAM significativamentes,mas consome mais **espaço mental** do desenvolvedor. Use com parcimônio.

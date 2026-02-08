@@ -1,15 +1,15 @@
-class Escritor:
-    def __init__(self, nome):
-        self.nome = nome
-        self.ferramenta = None
+class Logavel:
+    def log(self, mensagem):
+        print(f"LOG: {mensagem}")
 
-class Caneta:
-    def escrever(self):
-        print("A caneta está escrevendo...")
+class Conexao:
+    def conectar(self):
+        print("Conectando ao banco de dados...")
 
-escritor = Escritor("Renan")
-caneta_azul = Caneta()
+# Herança Múltipla
+class BancoDeDados(Logavel, Conexao):
+    pass
 
-# Associação: o escritor passa a usar a caneta
-escritor.ferramenta = caneta_azul
-escritor.ferramenta.escrever() # A caneta está escrevendo...
+db = BancoDeDados()
+db.log("Iniciando sistema") # Vem de Logavel
+db.conectar()               # Vem de Conexao
