@@ -5,7 +5,7 @@ Na Engenaria de Software, a **Herança Mútipla** ocorre quando uma classe filha
 Embora poderosa, ela introduz uma complexibilidade clássica: se ambas as classes pai tiverem um método com o mesmo nome, qual deles o Python deve executar?
 
 ---
-## O Conceito: "É um" de várias fontes
+## 1. O Conceito: "É um" de várias fontes
 
 A herança mútipla é útil quando um objeto possui naturezas distintas que se complementam.
 
@@ -38,11 +38,26 @@ Conectando ao banco de dados...
 ```
 
 ---
+## 2. O Problema do Diamante (Diamond Problem)
+
+O maior desafio da herança múltipla acontece quando duas classes pai herdam de uma mesma classe avó e ambas sobrescrevem o mesmo método. Sem uma regra clara, o interpretador ficaria "confuso".
+
+```Python
+
+# Diamond
+#           A
+#         /   \
+#        B     C
+#         \   /
+#           D
+```
+
+---
 ## 3. MRO: Method Resolution Order
 
 Para resolver esse conflito, o Python utiliza um algoritmo chamado **C3 Linearization** para criar o **MRO**. Ele define uma ordem linear e determinística de busca para os métodos.
 
-Podemos consultar esa ordem em qualquer classe usando o atributo *__mro__* ou o método **.mro()**.
+Podemos consultar essa ordem em qualquer classe usando o atributo *__mro__* ou o método **.mro()**.
 
 ```Python
 class A:
@@ -62,13 +77,16 @@ class D(B, C):
 
 # Qual será a saída?
 objeto = D()
-objeto.fala() 
+objeto.fala() # Saída: "Fala de B" 
 
+# Resultado da ordem de resolução de métodos (MRO)
 print(D.mro())
 # Ordem: D -> B -> C -> A -> object
 ```
 
 ```O que acontece aqui?``` O Python busca primeiro em **D**. Se não char, busca em **B**(o primeiro pai listado). Se não achar em **B**, busca em **C**, e por último na base **A**. No exemplo acima, ele executará a "Fala de B".
+
+```Descubra mais sobre o C3linearization:``` https://en.wikipedia.org/wiki/C3_linearization
 
 ---
 ## 4. Mixins: O uso inteligente da Herança Múltipla
