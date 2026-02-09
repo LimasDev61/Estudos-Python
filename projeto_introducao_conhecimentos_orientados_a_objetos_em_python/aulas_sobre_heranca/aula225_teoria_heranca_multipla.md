@@ -119,4 +119,4 @@ print(p.para_json())
 
 - ```Risco:``` O código pode ser tornar um "espaguete" difícil de rastrear se a hierarquia for muito profunda.
 
-A Herança mútipla não consome mais RAM significativamentes,mas consome mais **espaço mental** do desenvolvedor. Use com parcimônio.
+A Herança mútipla não consome mais RAM significativamente,mas consome mais **espaço mental** do desenvolvedor. Use com parcimônio.

@@ -1,15 +1,22 @@
-class Logavel:
-    def log(self, mensagem):
-        print(f"LOG: {mensagem}")
+class A:
+    def fala(self):
+        print("Fala de A")
 
-class Conexao:
-    def conectar(self):
-        print("Conectando ao banco de dados...")
+class B(A):
+    def fala(self):
+        print("Fala de B")
 
-# Herança Múltipla
-class BancoDeDados(Logavel, Conexao):
+class C(A):
+    def fala(self):
+        print("Fala de C")
+
+# Resultado da ordem de resolução de métodos (MRO) para a classe D
+class D(B, C):
     pass
 
-db = BancoDeDados()
-db.log("Iniciando sistema") # Vem de Logavel
-db.conectar()               # Vem de Conexao
+# Qual será a saída?
+objeto = D()
+objeto.fala() # Saída: "Fala de B" 
+
+print(D.mro())
+# Ordem: D -> B -> C -> A -> object
