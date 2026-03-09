@@ -55,3 +55,12 @@ Este é o *L* do acrônimico <a href="https://www.google.com/search?client=opera
 - ```Exemplo de Violação do LSP:``` Imagine uma classe **Passaro** com o método ***voar()***. Se criamos uma subclasse **Pinguim**, teremos um problema, pois pinguins não voam. Ao tentar fazer um pinguim voar, seu programa pode lançar um erro inesperado.
 
     - ```Solução na Engenharia:``` Criar uma hierarquia melhor, como **PassaroQueVoa** e **PassaroQueNaoVoa**.
+
+---
+## 4. Resumo para o Roadmap
+
+| Conceito | O que significa para o Engenheiro? |
+| :--- | :--- |
+| **Polimorfismo** | Escrever código genérico que funciona com qualquer subclasse. |
+| **Assinatura** | Manter a interface dos métodos consistente entre pai e filho. |
+| **LSP** | Garantir que a herança não seja "forçada"; a filha deve honrar o comportamento do pai. |
