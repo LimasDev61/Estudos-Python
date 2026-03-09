@@ -27,6 +27,9 @@ class Notificacao(ABC):
         """Assinatura: recebe nada (usa self.msg) e retorna bool"""
         pass
 
+# OBS: def enviar(self) -> bool: A setinha no final da função não faz parte da assinatura, e nem faz nada, mas serve para 
+# indicar que o retorno deve ser bool. É chamado de Type Annotation.
+#
 # #######################################################################################################
 #
 # 2. Implementando o Polimorfismo (Subclasses)
